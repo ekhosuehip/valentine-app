@@ -46,8 +46,8 @@ const Home = () => {
   const handleMaybeClick = () => {
     setThinkAgain(true); // Show "Think Again" message
     setTimeout(() => {
-      setThinkAgain(false); // Hide "Think Again" after 10 seconds
-    }, 10000); // Adjusted to 10 seconds
+      setThinkAgain(false); // Hide "Think Again" after 5 seconds
+    }, 5000); 
   };
 
   const unmuteAudio = () => {
@@ -102,6 +102,12 @@ const Home = () => {
         <p>
           Thank you for saying yes! You’ve made this Valentine's Day the best ever! 💘
         </p>
+        <div className="video-container">
+          <video width="600" controls autoPlay loop>
+            <source src="/sound/video.mp4" type="video/mp4" />
+            Your browser does not support the video element.
+          </video>
+        </div>
       </div>
     )}
   </div>
@@ -113,8 +119,6 @@ const Home = () => {
     <div className="heart heart4"></div>
   </div>
 </div>
-
-
 
   );
 };
