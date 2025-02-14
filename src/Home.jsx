@@ -8,23 +8,28 @@ const Home = () => {
   useEffect(() => {
     const audio = document.getElementById("background-music");
 
-    // Ensure the music plays continuously and automatically
+    // Unmute the audio and ensure it plays when the page loads
     const playAudio = () => {
-      audio.muted = false; // Unmute
-      audio.loop = true; // Ensure it loops
-      audio.play().catch(() => {
-        console.log(
-          "Audio playback blocked by browser. User interaction may be required."
-        );
-      });
+      if (audio) {
+        audio.muted = false; // Unmute the audio
+        audio.loop = true;   // Ensure the audio loops
+        audio.play().catch(() => {
+          console.log(
+            "Audio playback blocked by browser. User interaction may be required."
+          );
+        });
+      }
     };
 
-    playAudio(); // Try playing audio immediately on mount
+    // Automatically unmute and play the audio when the component mounts
+    playAudio();
 
     return () => {
-      audio.pause(); // Pause the audio when the component unmounts (optional)
+      if (audio) {
+        audio.pause(); // Pause the audio when the component unmounts (optional)
+      }
     };
-  }, []);
+  }, []); // Empty dependency array to run only on mount
 
   const handleReveal = () => {
     setShowQuestion(true);
