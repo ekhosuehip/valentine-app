@@ -45,6 +45,45 @@ p {
   margin: 20px 0;
 }
 
+.unmute-container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.unmute-btn {
+  background-color: #f4978e;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.unmute-btn:hover {
+  background-color: #d62828;
+}
+
+.icon {
+  display: block;
+  font-size: 2rem; /* Size of the arrow */
+  color: #d62828; /* Match with theme */
+  margin-top: 10px; /* Add spacing between the button and the icon */
+  animation: bounce 1s infinite; /* Add a bounce animation for emphasis */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
 .answer-btn {
   background-color: #6a0572;
   color: white;
@@ -60,6 +99,30 @@ p {
 .answer-btn:hover {
   background-color: #8a2be2;
 }
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Add space between buttons */
+  margin-top: 20px; /* Adjust spacing from the heading */
+}
+
+.unmute-btn {
+  background-color: #f4978e;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.unmute-btn:hover {
+  background-color: #d62828;
+}
+
+
 
 .hearts {
   position: absolute;
